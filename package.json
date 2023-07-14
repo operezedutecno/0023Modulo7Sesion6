@@ -1,0 +1,23 @@
+{
+  "name": "0023Modulo7Sesion6",
+  "version": "1.0.0",
+  "description": "Transacciones con NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/operezedutecno/0023Modulo7Sesion6.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/operezedutecno/0023Modulo7Sesion6/issues"
+  },
+  "homepage": "https://github.com/operezedutecno/0023Modulo7Sesion6#readme",
+  "dependencies": {
+    "pg": "^8.11.1"
+  }
+}

@@ -98,7 +98,24 @@ const procesoVenta = async() => {
         const idVenta = registroVenta.rows[0].ven_numero_transaccion
         console.log("idVenta", idVenta);
         // Fin Registro de venta
+
+
+        // Asociación de Productos a la venta
+        const consultaVentaProducto1 = {
+            text: "INSERT INTO ventas_productos(vp_numero_transaccion, vp_id_producto, cantidad) VALUES($1, $2, $3) RETURNING *",
+            values: [idVenta, idProducto1, 1]
+        }
+        const registroVentaProducto1 = await client.query(consultaVentaProducto1)
+
+        const consultaVentaProducto2 = {
+            text: "INSERT INTO ventas_productos(vp_numero_transaccion, vp_id_producto, cantidad) VALUES($1, $2, $3) RETURNING *",
+            values: [idVenta, idProducto2, 1]
+        }
+        const registroVentaProducto2 = await client.query(consultaVentaProducto2)
+        // Fin  Asociación de Productos a la venta
         
+        console.log("Ejecución exitosa");
+        await client.query("COMMIT")
     } catch (error) {
         console.log(error.message);
         // Finalización de la transacción en caso de error.
